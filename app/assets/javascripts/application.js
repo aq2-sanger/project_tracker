@@ -80,6 +80,22 @@
                         xtype: 'datecolumn',
                         format: 'd/m/Y'
                     }
+                ],
+                dockedItems: [
+                    {
+                        xtype: 'toolbar',
+                        dock: 'top',
+                        items: [
+                            {
+                                text: 'Delete',
+                                handler: function () {
+                                    var grid = this.findParentByType('grid');
+                                    var selection = grid.getView().getSelectionModel().getSelection()[0];
+                                    if (selection) { grid.store.remove(selection); }
+                                }
+                            }
+                        ]
+                    }
                 ]
             });
 
