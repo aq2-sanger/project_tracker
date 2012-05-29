@@ -1,12 +1,12 @@
 Download ExtJS from http://www.sencha.com/products/extjs/
 
-Unzip it to tmp/
+Unzip it to public
 
 Symlink the created directory to 'extjs'
 
 i.e.
 
-cd tmp/
+cd public/
 wget http://cdn.sencha.io/ext-4.1.0-gpl.zip
 unzip ext-4.1.0-gpl
 ln -s extjs-4.1.0 extjs
