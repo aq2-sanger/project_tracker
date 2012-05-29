@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+[
+  'EUCOMM',
+  'KOMP-CSD',
+  'SANGER_FACULTY'
+].each do |pipeline_name|
+  Pipeline.create!(:name => pipeline_name)
+end
