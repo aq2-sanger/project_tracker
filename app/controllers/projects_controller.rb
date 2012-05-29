@@ -1,8 +1,11 @@
 class ProjectsController < ApplicationController
-  respond_to :json
+  respond_to :json, :html
 
   def index
-    respond_with Project.all
+    respond_to do |format|
+      format.html
+      format.json { respond_with Project.all }
+    end
   end
 
   def show

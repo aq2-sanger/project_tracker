@@ -45,4 +45,6 @@ ProjectTracker::Application.routes.draw do
   resources :pipelines, :only => [:index]
 
   resources :projects, :only => [:index, :show, :create, :destroy]
+
+  match '/' => redirect('/projects')
 end
