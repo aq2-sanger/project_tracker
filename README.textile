@@ -4,18 +4,23 @@ and delete it in an ExtJS grid
 Set up ExtJS first; the instructions are in the file README.extjs
 
 Set up gems
-    bundle install
+
+bc. bundle install
 
 Start your server
-    unicorn -p 3000
+
+bc. unicorn -p 3000
 
 Set up your database:
-    bundle exec rake db:drop db:create db:migrate db:seed
+
+bc. bundle exec rake db:drop db:create db:migrate db:seed
 
 
 Upload some data:
-    curl --globoff -X POST -H 'Content-Type: application/json' --data-binary '{"project": {"marker_symbol": "Trafd1", "pipeline_id": 1, "not_targeted_date": "2012-04-23", "targeting_in_progress_date": "2012-05-30" }}' 'http://localhost:3000/projects.json'
-    curl --globoff -X POST -H 'Content-Type: application/json' --data-binary '{"project": {"marker_symbol": "Cbx1", "pipeline_id": 2, "not_targeted_date": "2012-05-23", "targeting_in_progress_date": "2012-05-27" }}' 'http://localhost:3000/projects.json'
+
+bc. curl --globoff -X POST -H 'Content-Type: application/json' --data-binary '{"project": {"marker_symbol": "Trafd1", "pipeline_id": 1, "not_targeted_date": "2012-04-23", "targeting_in_progress_date": "2012-05-30" }}' 'http://localhost:3000/projects.json'
+curl --globoff -X POST -H 'Content-Type: application/json' --data-binary '{"project": {"marker_symbol": "Cbx1", "pipeline_id": 2, "not_targeted_date": "2012-05-23", "targeting_in_progress_date": "2012-05-27" }}' 'http://localhost:3000/projects.json'
 
 View it in the grid and delete rows:
-    chromium-browser http://localhost:3000/
+
+bc. chromium-browser http://localhost:3000/
