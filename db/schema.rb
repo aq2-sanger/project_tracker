@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529143637) do
+ActiveRecord::Schema.define(:version => 20120529144335) do
 
   create_table "pipelines", :force => true do |t|
     t.text     "name",       :null => false
@@ -20,5 +20,15 @@ ActiveRecord::Schema.define(:version => 20120529143637) do
   end
 
   add_index "pipelines", ["name"], :name => "index_pipelines_on_name", :unique => true
+
+  create_table "projects", :force => true do |t|
+    t.text     "marker_symbol",              :null => false
+    t.date     "not_targeted_date",          :null => false
+    t.date     "targeting_in_progress_date"
+    t.date     "targeting_complete_date"
+    t.integer  "pipeline_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
 
 end
